@@ -1,0 +1,56 @@
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+    width: 100%;
+    text-align: center;
+}
+
+.card{
+    width: 100%;
+    background-color: gray;
+    align-content: end;
+}
+
+.card h3{
+    font-size: 50px;
+    margin: 0;
+}
+
+#toDoItems{
+    width: 50%;
+}
+input{
+    width: 50%;
+    height: 50px;
+    border-radius: 10px;
+    margin: 10px;
+    font-size: 50px;
+    text-align: center;
+}
+body{
+    margin: 0;
+    background-color: rgb(165, 162, 162);
+}
+
+#addButton{
+    width: 20%;
+    height: 50px;
+    border-radius: 10px;
+    margin: 10px;
+    background-color: green;
+}
+
+.divButtons{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.divButtons button{
+    width: 150px;
+    height: 100px;
+    border-radius: 50px;
+    margin: 10px;
+}

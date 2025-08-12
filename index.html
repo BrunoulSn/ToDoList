@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToDoList</title>
+    <link rel="stylesheet" href="/Styles/main.css">
 </head>
 <body>
     <main>
+        <input type="text" id="ToDoItemName">
+        <button id="addButton"><p>Adicionar Tarefa</p></button>
+        
         <div class="title"><h2>Lista de tarefas</h2></div>
-        <article id="toDo_Items">
-            <div></div>
-        </article>    
-
-        <button><p>Adicionar Tarefa</p></button>
-
+        <div id="toDoItems"></div>    
     </main>
 </body>
+<script src="/Controllers/indexController.js"></script>
 </html>
