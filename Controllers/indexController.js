@@ -1,8 +1,7 @@
 listItems = document.getElementById('toDoItems');
-
 function getToDoItems() {
     listItems.innerHTML = "";
-
+    listItems.classList.add('listItems');
     for (let i = 0; i < localStorage.length; i++) {
         let toDoItemKey = localStorage.key(i);
         let toDoItemValue = localStorage.getItem(toDoItemKey);
@@ -12,16 +11,18 @@ function getToDoItems() {
             let divBotoes = document.createElement('div');
             let textItem = document.createElement('h3');
 
-            textItem.textContent = toDoItemValue; // Agora mostra o valor da tarefa
+            textItem.textContent = toDoItemValue; 
 
             let editButton = document.createElement('button');
             editButton.textContent = "Editar";
+            editButton.classList.add('editButton');
             editButton.addEventListener("click", function () {
                 editItemToDoList(toDoItemKey);
             });
 
             let removeButton = document.createElement('button');
             removeButton.textContent = "Remover";
+            removeButton.classList.add('removeButton');
             removeButton.addEventListener("click", function () {
                 removeItemToDoList(toDoItemKey);
             });
@@ -41,17 +42,18 @@ function getToDoItems() {
 
     function editItemToDoList(itemKey) {
     let toDoItemName = document.getElementById("ToDoItemName").value;
-    
-    console.log("Tentando editar item:", itemKey);
-    console.log("Novo valor:", toDoItemName);
 
-    if (validarToDoItem(toDoItemName)) {
+    // Permite editar para o mesmo nome, mas impede duplicados
+    if (itemKey !== toDoItemName && validarToDoItem(toDoItemName)) {
         console.log("Valor inválido, edição cancelada.");
         return;
     }
 
-    localStorage.setItem(itemKey, toDoItemName);
-    console.log("Item atualizado no localStorage.");
+    // Se o nome mudou, remove o antigo e adiciona o novo
+    if (itemKey !== toDoItemName) {
+        localStorage.removeItem(itemKey);
+    }
+    localStorage.setItem(toDoItemName, toDoItemName);
     getToDoItems();
 }
 
