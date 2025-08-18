@@ -7,16 +7,20 @@ main{
 }
 
 .card{
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
     width: 100%;
     background-color: rgb(241, 233, 233);
-    align-content: end;
+    align-content: center;
     margin: 10px;
     border-radius: 20px;
 }
 
 .card h3{
+    max-width: 80%;
     font-size: 50px;
-    margin: 0;
+    margin-left: 5px;
 }
 
 #toDoItems{
@@ -35,6 +39,10 @@ body{
     background-color: rgb(90, 136, 136);
 }
 
+body *{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
 #addButton{
     width: 20%;
     height: 50px;
@@ -44,7 +52,7 @@ body{
 }
 
 .divButtons{
-    width: 100%;
+    width: 20%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
